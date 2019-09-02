@@ -184,8 +184,8 @@ hi def link cssVendor Comment
 hi def link cssHacks Comment
 hi def link cssTagName Statement
 hi def link cssDeprecated Error
-hi def link cssSelectorOp Special
-hi def link cssSelectorOp2 Special
+hi! def link cssSelectorOp GruvboxGreenBold
+hi! def link cssSelectorOp2 GruvboxGreenBold
 hi def link cssAttrComma Special
 
 hi def link cssPseudoClassId PreProc
@@ -200,7 +200,7 @@ hi def link cssAtRule Include
 hi def link cssAtKeyword PreProc
 hi def link cssImportant Special
 hi def link cssCustomProp Special
-hi def link cssBraces Function
+hi! def link cssBraces GruvboxOrangeBold
 hi def link cssBraceError Error
 hi def link cssError Error
 hi def link cssUnicodeEscape Special
@@ -219,7 +219,7 @@ hi def link cssAttr Constant
 hi def link cssNoise Noise
 
 hi def link cssProp GruvboxBlue
-hi def link cssUnitDecorators GruvboxAqua
+hi def link cssUnitDecorators GruvboxPurpleBold
 
 hi def link cssValueLength Number
 hi def link cssValueInteger Number
