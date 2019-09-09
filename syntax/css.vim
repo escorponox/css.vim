@@ -115,7 +115,7 @@ syn match cssPseudoClassId contained  "\<\(input-\)\=placeholder\>"
 
 " Misc highlight groups
 syntax match cssUnitDecorators /\(#\|-\|+\|%\|mm\|cm\|in\|pt\|pc\|em\|ex\|px\|ch\|rem\|vh\|vw\|vmin\|vmax\|dpi\|dppx\|dpcm\|Hz\|kHz\|s\|ms\|deg\|grad\|rad\|fr\)/ contained
-" syntax match cssNoise contained /\(:\|;\|\/\)/
+syntax match cssNoise contained /\(;\)/
 
 " Comment
 syn region cssComment start="/\*" end="\*/" contains=@Spell fold
@@ -184,8 +184,8 @@ hi def link cssVendor Comment
 hi def link cssHacks Comment
 hi def link cssTagName Statement
 hi def link cssDeprecated Error
-hi! def link cssSelectorOp GruvboxGreenBold
-hi! def link cssSelectorOp2 GruvboxGreenBold
+hi! def link cssSelectorOp GruvboxBlueBold
+hi! def link cssSelectorOp2 GruvboxBlueBold
 hi def link cssAttrComma Special
 
 hi def link cssPseudoClassId PreProc
@@ -216,9 +216,9 @@ hi def link cssFontDescriptorAttr cssAttr
 hi def link cssClassName Function
 hi def link cssClassNameDot Function
 hi def link cssAttr Constant
-hi def link cssNoise Noise
+hi def link cssNoise GruvboxBlueBold
 
-hi def link cssProp GruvboxBlue
+hi def link cssProp GruvboxBlueBold
 hi def link cssUnitDecorators GruvboxPurpleBold
 
 hi def link cssValueLength Number
