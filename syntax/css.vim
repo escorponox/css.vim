@@ -102,7 +102,7 @@ syn match cssAttrComma ","
 " Pseudo class
 " http://www.w3.org/TR/css3-selectors/
 syn match cssPseudoClass ":[A-Za-z0-9_-]*" contains=cssNoise,cssPseudoClassId,cssUnicodeEscape,cssVendor,cssPseudoClassFn
-syn keyword cssPseudoClassId contained link visited active hover before after left right
+syn keyword cssPseudoClassId contained link visited active hover before after
 syn keyword cssPseudoClassId contained root empty target enable disabled checked invalid
 syn match cssPseudoClassId contained "\<first-\(line\|letter\)\>"
 syn match cssPseudoClassId contained "\<\(first\|last\|only\)-\(of-type\|child\)\>"
@@ -129,14 +129,6 @@ syn region cssStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=cssUnicodeEsca
 " Vendor Prefix
 syn match cssVendor contained "-\(webkit\|moz\|o\|ms\)-"
 
-" Various CSS Hack characters
-" In earlier versions of IE (6 and 7), one can prefix property names
-" with a _ or * to isolate those definitions to particular versions of IE
-" This is purely decorative and therefore we assign to the same highlight
-" group to cssVendor, for more information:
-" http://www.paulirish.com/2009/browser-specific-css-hacks/
-syn match cssHacks contained /\(_\|*\)/
-
 " Attr Enhance
 " Some keywords are both Prop and Attr, so we have to handle them
 " cssPseudoClassId is hidden by cssAttrRegion, so we add it here. see #69
@@ -155,10 +147,6 @@ syn keyword cssAtRuleLogical only not and contained
 syn region cssAtRule start=/@media\>/ end=/\ze{/ skipwhite skipnl matchgroup=cssAtKeyword contains=cssMediaProp,cssValueLength,cssAtRuleLogical,cssValueInteger,cssMediaAttr,cssVendor,cssMediaType,cssComment,cssCustomProp,cssFunctionName nextgroup=cssDefinition
 syn keyword cssMediaType contained screen print aural braille embossed handheld projection tty tv speech all contained
 
-" @page
-" http://www.w3.org/TR/css3-page/
-syn region cssAtRule start=/@page\>/ end=/\ze{/ skipwhite skipnl matchgroup=cssAtKeyword contains=cssPagePseudo,cssComment nextgroup=cssDefinition
-syn match cssPagePseudo /:\(left\|right\|first\|blank\)/ contained skipwhite skipnl
 " @keyframe
 " http://www.w3.org/TR/css3-animations/#keyframes
 syn region cssAtRule start=/@\(-[a-z]\+-\)\=keyframes\>/ end=/\ze{/ skipwhite skipnl matchgroup=cssAtKeyword contains=cssVendor,cssComment nextgroup=cssDefinition
